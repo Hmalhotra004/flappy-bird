@@ -9,6 +9,7 @@ public class LogicManager : MonoBehaviour
     public GameObject gameOverScreen;
     public bool isGameOver = false;
     public AudioSource pointSfx;
+    [SerializeField] private ParticleSystem cloud = default;
 
     [ContextMenu("Increase Score")]
     public void addScore(int scoreToAdd)
@@ -32,5 +33,12 @@ public class LogicManager : MonoBehaviour
     public void exit()
     {
         SceneManager.LoadScene("StartMenuScene");
+    }
+
+    private void Update()
+    {
+        if (!isGameOver) { 
+            cloud.Play();
+        }
     }
 }
