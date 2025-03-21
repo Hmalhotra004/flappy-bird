@@ -21,7 +21,6 @@ public class BirdScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && birdIsAlive && !logic.isGameOver)
         {
             animator.SetBool("jump",true); 
-            animator.SetTrigger("Jump");
             myRigidBody.linearVelocity = Vector2.up * flapStrength;
         }
 
