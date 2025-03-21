@@ -8,11 +8,13 @@ public class LogicManager : MonoBehaviour
     public Text scoreText;
     public GameObject gameOverScreen;
     public bool isGameOver = false;
+    public AudioSource pointSfx;
 
     [ContextMenu("Increase Score")]
     public void addScore(int scoreToAdd)
     {
         playerScore += scoreToAdd;
+        pointSfx.Play();
         scoreText.text = playerScore.ToString();
     }
 
