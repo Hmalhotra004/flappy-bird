@@ -28,4 +28,9 @@ public class LogicManager : MonoBehaviour
         isGameOver = true;
         gameOverScreen.SetActive(true);
     }
+
+    public void exit()
+    {
+        SceneManager.LoadScene("StartMenuScene");
+    }
 }
