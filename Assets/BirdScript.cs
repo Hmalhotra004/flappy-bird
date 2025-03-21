@@ -6,6 +6,7 @@ public class BirdScript : MonoBehaviour
     public float flapStrength;
     public LogicManager logic;
     public bool birdIsAlive = true;
+    public AudioSource flapSfx;
     [SerializeField] private Animator animator;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -20,7 +21,8 @@ public class BirdScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && birdIsAlive && !logic.isGameOver)
         {
-            animator.SetBool("jump",true); 
+            animator.SetBool("jump",true);
+            flapSfx.Play();
             myRigidBody.linearVelocity = Vector2.up * flapStrength;
         }
 
